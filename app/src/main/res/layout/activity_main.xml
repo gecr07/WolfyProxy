@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="24dp">
+
+    <!-- Banner WolfyProxy -->
+    <TextView
+        android:id="@+id/tvBanner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="WolfyProxy"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:textColor="#1976D2"
+        android:gravity="center"
+        android:fontFamily="casual"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.18" />
+
+    <!-- 🐺 ICONO DEBAJO DEL BANNER -->
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@mipmap/ic_launcher"
+        android:contentDescription="WolfyProxy Logo"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tvBanner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Campo IP -->
+    <EditText
+        android:id="@+id/etIp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Dirección IP (e.g. 192.168.1.10)"
+        android:inputType="textNoSuggestions|text"
+        android:padding="12dp"
+        android:textSize="18sp"
+        android:background="@android:drawable/edit_text"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/imgLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Campo Puerto -->
+    <EditText
+        android:id="@+id/etPort"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Puerto (e.g. 8080)"
+        android:inputType="number"
+        android:padding="12dp"
+        android:textSize="18sp"
+        android:background="@android:drawable/edit_text"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/etIp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Botón Iniciar proxy -->
+    <Button
+        android:id="@+id/btnStartProxy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Iniciar proxy"
+        android:textSize="18sp"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="28dp"
+        app:layout_constraintTop_toBottomOf="@id/etPort"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Botón Quitar proxy -->
+    <Button
+        android:id="@+id/btnStopProxy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Quitar proxy"
+        android:textSize="18sp"
+        android:backgroundTint="#F44336"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="14dp"
+        app:layout_constraintTop_toBottomOf="@id/btnStartProxy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Botón Salir -->
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Salir"
+        android:textSize="18sp"
+        android:backgroundTint="#9E9E9E"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="14dp"
+        app:layout_constraintTop_toBottomOf="@id/btnStopProxy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 🔽 ESTADO MÁS ABAJO Y MÁS GRANDE -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Proxy DESACTIVADO"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#F44336"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/btnExit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
