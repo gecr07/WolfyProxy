@@ -43,7 +43,7 @@ The author is not responsible for any misuse.
 
 ## 📸 Screenshots
 
-*(Coming soon)*
+<img width="462" height="1004" alt="image" src="https://github.com/user-attachments/assets/a75fc5ed-a75f-43b1-8fbc-d055141fc5f5" />
 
 ---
 
