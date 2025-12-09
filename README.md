@@ -1,5 +1,8 @@
 # 🐺 WolfyProxy
 
+<img width="1024" height="1024" alt="wolfyproxy" src="https://github.com/user-attachments/assets/08f30b45-1f2a-4575-8ba5-d235101e8f36" />
+
+
 WolfyProxy is a lightweight Android tool designed for pentesters that allows quick activation and deactivation of a system HTTP proxy on **rooted devices**.
 
 It is built to simplify mobile traffic interception using tools like Burp Suite, mitmproxy, or ZAP during security testing.
