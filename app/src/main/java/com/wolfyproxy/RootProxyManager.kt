@@ -7,10 +7,7 @@ object RootProxyManager {
 
     private const val TAG = "RootProxyManager"
 
-    /**
-     * Configura el proxy HTTP global.
-     * Intenta usar varias keys para ser compatible con más ROMs.
-     */
+    
     fun setHttpProxy(ip: String, port: String): Boolean {
         val commands = arrayOf(
             "settings put global http_proxy $ip:$port",
@@ -22,10 +19,7 @@ object RootProxyManager {
         return ok
     }
 
-    /**
-     * Elimina el proxy HTTP global.
-     * Borra varias posibles keys y además pone http_proxy en :0 por si alguna ROM lo usa así.
-     */
+
     fun clearHttpProxy(): Boolean {
         val commands = arrayOf(
             "settings delete global http_proxy",
@@ -39,9 +33,7 @@ object RootProxyManager {
         return ok
     }
 
-    /**
-     * Ejecuta varios comandos con una única sesión 'su'.
-     */
+
     private fun runSuCommands(commands: Array<String>): Boolean {
         return try {
             val process = Runtime.getRuntime().exec("su")
@@ -63,10 +55,7 @@ object RootProxyManager {
         }
     }
 
-    /**
-     * Obtiene el valor crudo de 'settings get global http_proxy' usando su -c.
-     * Solo para debug/log.
-     */
+
     fun getCurrentProxyRaw(): String {
         return try {
             val process = Runtime.getRuntime().exec(arrayOf("su", "-c", "settings get global http_proxy"))
@@ -80,3 +69,4 @@ object RootProxyManager {
         }
     }
 }
+
