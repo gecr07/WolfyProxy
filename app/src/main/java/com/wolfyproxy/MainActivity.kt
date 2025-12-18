@@ -21,10 +21,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Cargar IP/puerto y estado
+
         loadProxyConfig()
 
-        // Iniciar proxy (set http_proxy vía root) en hilo de fondo
+
         binding.btnStartProxy.setOnClickListener {
             val ip = binding.etIp.text.toString().trim()
             val port = binding.etPort.text.toString().trim()
@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Guardamos la config
             saveProxyConfig(ip, port)
 
             Toast.makeText(this, "Solicitando root para configurar proxy…", Toast.LENGTH_SHORT).show()
@@ -62,7 +61,7 @@ class MainActivity : AppCompatActivity() {
             }.start()
         }
 
-        // Quitar proxy (delete http_proxy) en hilo de fondo
+
         binding.btnStopProxy.setOnClickListener {
 
             Toast.makeText(this, "Solicitando root para quitar proxy…", Toast.LENGTH_SHORT).show()
@@ -96,7 +95,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Guarda IP y puerto en SharedPreferences (pero no el estado)
+
     private fun saveProxyConfig(ip: String, port: String) {
         val sp = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
         sp.edit()
@@ -117,7 +116,7 @@ class MainActivity : AppCompatActivity() {
         updateStatus(enabled)
     }
 
-    // Guarda el estado y actualiza el indicador
+
     private fun setEnabled(enabled: Boolean) {
         val sp = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
         sp.edit()
@@ -126,7 +125,7 @@ class MainActivity : AppCompatActivity() {
         updateStatus(enabled)
     }
 
-    // Actualiza el TextView de estado
+
     private fun updateStatus(enabled: Boolean) {
         if (enabled) {
             binding.tvStatus.text = "Proxy ACTIVO"
